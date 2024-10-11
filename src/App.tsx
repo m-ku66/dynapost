@@ -1,44 +1,50 @@
-import React, { useEffect, useRef } from "react";
-import anime from "animejs";
+import InteractionBox from "./components/InteractionBox";
+import InteractionItem from "./components/InteractionItem";
+import { InteractionProvider } from "./context/InteractionContext";
 
 function App() {
-  const elementRef = useRef(null);
-  const boxRef = useRef(null);
-
-  useEffect(() => {
-    // Basic animation for the text
-    anime({
-      targets: elementRef.current,
-      translateY: 20,
-      opacity: [0, 1],
-      duration: 2000,
-      easing: "easeInOutQuad",
-    });
-
-    // Animation for the box
-    anime({
-      targets: boxRef.current,
-      translateX: 250,
-      rotate: 360,
-      duration: 3000,
-      loop: true,
-      direction: "alternate",
-      easing: "easeInOutSine",
-    });
-  }, []);
-
   return (
-    <div className="App">
-      <h1
-        ref={elementRef}
-        className="text-3xl font-bold mb-4"
-        style={{ opacity: 0 }} // Start with opacity 0
-      >
-        Anime.js Example
-      </h1>
+    <InteractionProvider>
+      {/* Desktop and Tablet */}
+      <div className="container max-w-full h-screen px-4 py-2">
+        <div className="w-full h-full flex flex-col gap-2 bg-neutral-200">
+          {/* Title and subtext */}
+          <div className="w-full flex flex-col items-center justify-center py-4 bg-neutral-300">
+            <h1 className="select-none inter text-[8rem] font-bold leading-none">
+              DYNAPOST
+            </h1>
+            <h2 className="select-none inter text-[2rem] font-light">
+              AN INTERACTIVE POSTER DESIGN EXPERIENCE
+            </h2>
+          </div>
 
-      <div ref={boxRef} className="w-16 h-16 bg-blue-500"></div>
-    </div>
+          {/* Interaction selector */}
+          <div className="flex flex-col gap-4">
+            <div className="w-full h-[0.05rem] bg-black"></div>
+            <div className="flex justify-between items-center w-full h-fit">
+              <InteractionItem
+                interactionNumber="001"
+                interactionDesc="Spark a change. Your click, your choice."
+              />
+              <InteractionItem
+                interactionNumber="002"
+                interactionDesc="Pause and ponder. What lies beneath?"
+              />
+              <InteractionItem
+                interactionNumber="003"
+                interactionDesc="Shift perspectives. Redraw boundaries."
+              />
+            </div>
+            <div className="w-full h-[0.05rem] bg-black"></div>
+          </div>
+
+          {/* Interaction box */}
+          <InteractionBox />
+        </div>
+      </div>
+
+      {/* Mobile */}
+    </InteractionProvider>
   );
 }
 
