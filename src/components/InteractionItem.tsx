@@ -28,7 +28,7 @@ const InteractionItem = ({ interactionNumber, interactionDesc }: Props) => {
       className="select-none cursor-pointer flex flex-col gap-[0.05rem] bg-neutral-300"
     >
       <h3>{interactionNumber}</h3>
-      <p className="w-[15rem]">{interactionDesc}</p>
+      <p className="w-[15rem] text-[1rem] md:text-[1rem]">{interactionDesc}</p>
     </div>
   );
 };

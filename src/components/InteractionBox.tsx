@@ -1,12 +1,24 @@
 import { useInteraction } from "../context/InteractionContext";
+import ClickInteraction from "./interactions/ClickInteraction";
+import HoverInteraction from "./interactions/HoverInteraction";
 
 const InteractionBox = () => {
   const { interactionMode } = useInteraction();
 
+  function renderInteraction(mode: string) {
+    switch (mode) {
+      case "click":
+        return <ClickInteraction />;
+      case "hover":
+        return <HoverInteraction />;
+      case "drag":
+        return "Drag";
+    }
+  }
+
   return (
     <div className="w-full h-full flex justify-center items-center border-[0.05rem] border-black">
-      {/* replace this with interaction components later */}
-      <p>{interactionMode}</p>
+      {renderInteraction(interactionMode)}
     </div>
   );
 };
