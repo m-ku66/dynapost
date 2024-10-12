@@ -1,5 +1,6 @@
 import { useInteraction } from "../context/InteractionContext";
 import ClickInteraction from "./interactions/ClickInteraction";
+import DragInteraction from "./interactions/DragInteraction";
 import HoverInteraction from "./interactions/HoverInteraction";
 
 const InteractionBox = () => {
@@ -12,7 +13,7 @@ const InteractionBox = () => {
       case "hover":
         return <HoverInteraction />;
       case "drag":
-        return "Drag";
+        return <DragInteraction />;
     }
   }
 

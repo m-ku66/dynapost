@@ -25,7 +25,7 @@ const HoverInteraction: React.FC = () => {
       id: Date.now(),
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: 5,
+      radius: 10,
     };
   }, []);
 

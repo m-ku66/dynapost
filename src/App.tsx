@@ -6,10 +6,10 @@ function App() {
   return (
     <InteractionProvider>
       {/* Desktop and Tablet */}
-      <div className="hidden md:flex container max-w-full h-screen px-4 py-2">
-        <div className="w-full h-full flex flex-col gap-2 bg-neutral-200">
+      <div className="hidden md:flex container max-w-full h-screen px-8 py-2">
+        <div className="w-full h-full flex flex-col gap-2">
           {/* Title and subtext */}
-          <div className="w-full flex flex-col items-center justify-center py-4 bg-neutral-300">
+          <div className="w-full flex flex-col items-center justify-center py-4">
             <h1 className="select-none inter text-[7rem] font-bold leading-none">
               DYNAPOST
             </h1>
@@ -49,9 +49,9 @@ function App() {
       {/* // */}
       {/* Mobile */}
       <div className="flex md:hidden container max-w-full h-screen px-4 py-2 overflow-x-hidden">
-        <div className="w-full h-full flex flex-col gap-2 bg-neutral-200">
+        <div className="w-full h-full flex flex-col gap-2">
           {/* Title and subtext */}
-          <div className="w-full flex flex-col items-center justify-center py-4 bg-neutral-300">
+          <div className="w-full flex flex-col items-center justify-center py-4">
             <h1 className="select-none inter text-[4rem] font-bold leading-none">
               DYNAPOST
             </h1>

@@ -25,7 +25,7 @@ const InteractionItem = ({ interactionNumber, interactionDesc }: Props) => {
   return (
     <div
       onClick={() => handleClick(interactionNumber)}
-      className="select-none cursor-pointer flex flex-col gap-[0.05rem] bg-neutral-300"
+      className="select-none cursor-pointer flex flex-col gap-[0.05rem]"
     >
       <h3>{interactionNumber}</h3>
       <p className="w-[15rem] text-[1rem] md:text-[1rem]">{interactionDesc}</p>
